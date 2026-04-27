@@ -1,0 +1,143 @@
+---
+import { Music2 } from "lucide-react";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaXTwitter,
+  FaSpotify
+} from "react-icons/fa6";
+
+const { t, lang } = Astro.props;
+---
+
+<footer class="border-t border-white/10 bg-black">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-14">
+
+    <!-- Top -->
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <!-- Brand -->
+      <div>
+
+        <div class="flex items-center gap-3">
+
+          <div class="w-10 h-10 rounded-2xl bg-linear-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-lg shadow-violet-500/20">
+            <Music2 className="w-5 h-5 text-white" />
+          </div>
+
+          <div>
+            <p class="text-white font-semibold text-lg">
+              ArtistHub
+            </p>
+
+            <p class="text-zinc-500 text-sm">
+              Artist Pages
+            </p>
+          </div>
+
+        </div>
+
+        <p class="mt-5 text-zinc-400 max-w-sm leading-relaxed">
+          {t("meta.description")}
+        </p>
+
+      </div>
+
+      <!-- Navigation -->
+      <div>
+
+        <h3 class="text-white font-medium mb-4">
+          {t("footer.navigation")}
+        </h3>
+
+        <div class="space-y-3 text-zinc-400">
+
+          <a href="#features" class="block hover:text-white transition">
+            {t("nav.features")}
+          </a>
+
+          <a href="#templates" class="block hover:text-white transition">
+            {t("nav.templates")}
+          </a>
+
+          <a href="#pricing" class="block hover:text-white transition">
+            {t("nav.pricing")}
+          </a>
+
+          <a href="#faq" class="block hover:text-white transition">
+            {t("nav.faq")}
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Social -->
+      <div>
+
+        <h3 class="text-white font-medium mb-4">
+          Social
+        </h3>
+
+        <div class="flex flex-wrap gap-3">
+
+          <a
+            href="#"
+            class="w-12 h-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/10 hover:scale-105 transition"
+            aria-label="Instagram"
+          >
+            <FaInstagram className="w-6 h-6" />
+          </a>
+
+          <a
+            href="#"
+            class="w-12 h-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/10 hover:scale-105 transition"
+            aria-label="X"
+          >
+            <FaXTwitter className="w-6 h-6" />
+          </a>
+
+          <a
+            href="#"
+            class="w-12 h-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/10 hover:scale-105 transition"
+            aria-label="YouTube"
+          >
+            <FaYoutube className="w-6 h-6" />
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+
+      <p class="text-zinc-500 text-sm">
+        © 2026 ArtistHub. {t("footer.rights")}
+      </p>
+
+      <div class="flex gap-5 text-sm text-zinc-500">
+
+        <a
+          href={`/?lang=${lang}`}
+          class="hover:text-white transition"
+        >
+          {t("footer.privacy")}
+        </a>
+
+        <a
+          href={`/?lang=${lang}`}
+          class="hover:text-white transition"
+        >
+          {t("footer.terms")}
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>

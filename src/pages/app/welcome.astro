@@ -1,0 +1,375 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+---
+
+<AppLayout title="Welcome | ArtistHub">
+
+<section class="relative">
+
+  <!-- Header -->
+  <div class="mb-10">
+
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-zinc-300">
+      ✨ Configuración inicial
+    </div>
+
+    <h1 class="mt-5 text-4xl md:text-5xl font-semibold tracking-tight">
+      Crea tu perfil en minutos
+    </h1>
+
+    <p class="mt-4 text-zinc-400 text-lg max-w-2xl">
+      Personaliza tu página artística y prepárate para compartir tu link con fans,
+      marcas y colaboradores.
+    </p>
+
+  </div>
+
+  <!-- Grid -->
+  <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-8">
+
+    <!-- FORM -->
+    <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+
+      <form id="welcome-form" class="space-y-6">
+
+        <!-- Avatar -->
+        <div>
+
+          <label class="block text-sm text-zinc-300 mb-3">
+            Fotografía de perfil
+          </label>
+
+          <div class="flex items-center gap-4">
+
+            <img
+              id="avatar-preview"
+              src="https://placehold.co/120x120"
+              class="w-20 h-20 rounded-2xl object-cover border border-white/10"
+            />
+
+            <label class="cursor-pointer h-12 px-5 rounded-2xl bg-white text-black font-medium flex items-center">
+              Subir imagen
+
+              <input
+                id="avatar"
+                type="file"
+                accept="image/*"
+                class="hidden"
+              />
+            </label>
+
+          </div>
+
+        </div>
+
+        <!-- Artist Name -->
+        <div>
+          <label class="block text-sm text-zinc-300 mb-2">
+            Nombre artístico
+          </label>
+
+          <input
+            id="artist_name"
+            type="text"
+            placeholder="Ej: Recho"
+            class="w-full h-14 rounded-2xl bg-black/40 border border-white/10 px-5 text-white outline-none focus:border-violet-500"
+          />
+        </div>
+
+        <!-- Username -->
+        <div>
+          <label class="block text-sm text-zinc-300 mb-2">
+            Tu URL pública
+          </label>
+
+          <div class="flex items-center h-14 rounded-2xl bg-black/40 border border-white/10 overflow-hidden">
+
+            <div class="px-4 text-zinc-500 text-sm border-r border-white/10">
+              artisthub.com/
+            </div>
+
+            <input
+              id="username"
+              type="text"
+              placeholder="recho"
+              class="flex-1 h-full bg-transparent px-4 text-white outline-none"
+            />
+
+          </div>
+
+          <p id="slug-preview" class="mt-2 text-xs text-zinc-500">
+            artisthub.com/username
+          </p>
+
+        </div>
+
+        <!-- Genre -->
+        <div>
+          <label class="block text-sm text-zinc-300 mb-2">
+            Categoría
+          </label>
+
+          <select
+            id="genre"
+            class="w-full h-14 rounded-2xl bg-black/40 border border-white/10 px-5 text-white outline-none"
+          >
+            <option>Urbano</option>
+            <option>Trap</option>
+            <option>Reggaetón</option>
+            <option>Pop</option>
+            <option>Rock</option>
+            <option>DJ / Producer</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <!-- Bio -->
+        <div>
+          <label class="block text-sm text-zinc-300 mb-2">
+            Bio corta
+          </label>
+
+          <textarea
+            id="bio"
+            rows="4"
+            placeholder="Describe tu proyecto..."
+            class="w-full rounded-2xl bg-black/40 border border-white/10 px-5 py-4 text-white outline-none focus:border-violet-500 resize-none"
+          ></textarea>
+        </div>
+
+        <!-- Links -->
+        <div class="grid md:grid-cols-2 gap-4">
+
+          <input
+            id="instagram"
+            type="text"
+            placeholder="Instagram URL"
+            class="h-14 rounded-2xl bg-black/40 border border-white/10 px-5 text-white outline-none"
+          />
+
+          <input
+            id="spotify"
+            type="text"
+            placeholder="Spotify URL"
+            class="h-14 rounded-2xl bg-black/40 border border-white/10 px-5 text-white outline-none"
+          />
+
+        </div>
+
+        <!-- CTA -->
+        <button
+          id="save-btn"
+          type="submit"
+          class="w-full h-14 rounded-2xl bg-white text-black font-medium hover:scale-[1.01] transition"
+        >
+          Guardar y entrar al Dashboard →
+        </button>
+
+        <p
+          id="status"
+          class="text-center text-sm text-zinc-400"
+        ></p>
+
+      </form>
+
+    </div>
+
+    <!-- LIVE PREVIEW -->
+    <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+
+      <p class="text-sm text-zinc-400 mb-5">
+        Vista previa en tiempo real
+      </p>
+
+      <div class="rounded-3xl bg-black/40 border border-white/10 p-6">
+
+        <img
+          id="live-avatar"
+          src="https://placehold.co/120x120"
+          class="w-24 h-24 rounded-3xl object-cover border border-white/10"
+        />
+
+        <h3
+          id="live-name"
+          class="mt-5 text-2xl font-semibold"
+        >
+          Tu nombre artístico
+        </h3>
+
+        <p
+          id="live-url"
+          class="text-sm text-zinc-500 mt-1"
+        >
+          artisthub.com/username
+        </p>
+
+        <p
+          id="live-bio"
+          class="mt-5 text-zinc-400 text-sm leading-relaxed"
+        >
+          Tu descripción aparecerá aquí.
+        </p>
+
+        <div class="grid grid-cols-2 gap-3 mt-6">
+
+          <div class="h-11 rounded-2xl bg-white text-black text-sm font-medium flex items-center justify-center">
+            Listen Now
+          </div>
+
+          <div class="h-11 rounded-2xl bg-white/5 text-white text-sm flex items-center justify-center">
+            Follow
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module">
+  import { supabase } from "../../lib/supabase";
+
+  const username = document.getElementById("username");
+  const artist = document.getElementById("artist_name");
+  const bio = document.getElementById("bio");
+  const avatar = document.getElementById("avatar");
+
+  const liveName = document.getElementById("live-name");
+  const liveUrl = document.getElementById("live-url");
+  const liveBio = document.getElementById("live-bio");
+
+  const preview = document.getElementById("slug-preview");
+
+  const avatarPreview =
+    document.getElementById("avatar-preview");
+
+  const liveAvatar =
+    document.getElementById("live-avatar");
+
+  username?.addEventListener("input", () => {
+    const clean = username.value
+      .toLowerCase()
+      .replace(/[^a-z0-9-_]/g, "");
+
+    username.value = clean;
+
+    preview.textContent =
+      "artisthub.com/" + clean;
+
+    liveUrl.textContent =
+      "artisthub.com/" + clean;
+  });
+
+  artist?.addEventListener("input", () => {
+    liveName.textContent =
+      artist.value || "Tu nombre artístico";
+  });
+
+  bio?.addEventListener("input", () => {
+    liveBio.textContent =
+      bio.value || "Tu descripción aparecerá aquí.";
+  });
+
+  avatar?.addEventListener("change", () => {
+    const file = avatar.files[0];
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+
+    avatarPreview.src = url;
+    liveAvatar.src = url;
+  });
+
+  document
+    .getElementById("welcome-form")
+    ?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const status =
+        document.getElementById("status");
+
+      status.textContent = "Guardando...";
+
+      const {
+        data: { user }
+      } = await supabase.auth.getUser();
+
+      if (!user) {
+        location.href = "/";
+        return;
+      }
+
+      let avatar_url = "";
+
+      const file = avatar.files?.[0];
+
+      if (file) {
+        const path =
+          user.id + "/" + Date.now() + "-" + file.name;
+
+        const { error: uploadError } =
+          await supabase.storage
+            .from("avatars")
+            .upload(path, file);
+
+        if (!uploadError) {
+          const { data } =
+            supabase.storage
+              .from("avatars")
+              .getPublicUrl(path);
+
+          avatar_url = data.publicUrl;
+        }
+      }
+
+      const payload = {
+        artist_name: artist.value,
+        username: username.value,
+        genre:
+          document.getElementById("genre").value,
+        bio: bio.value,
+        instagram:
+          document.getElementById("instagram").value,
+        spotify:
+          document.getElementById("spotify").value,
+        avatar_url,
+        onboarding_completed: true
+      };
+
+      const { error } =
+        await supabase
+          .from("profiles")
+          .update(payload)
+          .eq("id", user.id);
+
+      if (error) {
+        status.textContent =
+          "Error guardando datos.";
+        return;
+      }
+
+      await supabase
+        .from("artist_pages")
+        .upsert({
+          user_id: user.id,
+          slug: username.value,
+          artist_name: artist.value,
+          bio: bio.value,
+          theme: "free",
+          published: false
+        });
+
+      status.textContent =
+        "Todo listo. Redirigiendo...";
+
+      setTimeout(() => {
+        location.href = "/app";
+      }, 900);
+    });
+</script>
+
+</AppLayout>

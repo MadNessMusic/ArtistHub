@@ -1,0 +1,73 @@
+---
+import {
+  FaSpotify,
+  FaYoutube as Video,
+  FaTiktok
+} from "react-icons/fa6";
+
+import { BsAppleMusic } from "react-icons/bs";
+
+const { t } = Astro.props;
+
+const platforms = [
+  {
+    name: "Spotify",
+    icon: FaSpotify
+  },
+  {
+    name: "Apple Music",
+    icon: BsAppleMusic
+  },
+  {
+    name: "YouTube",
+    icon: Video
+  },
+  {
+    name: "TikTok",
+    icon: FaTiktok
+  }
+];
+---
+
+<section class="py-20 border-y border-white/5 bg-black">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center">
+
+    <!-- Heading -->
+    <p class="text-zinc-500 text-sm uppercase tracking-[0.25em] mb-10">
+      {t("trusted.title")}
+    </p>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 lg:gap-8">
+
+      {platforms.map((item) => {
+        const Icon = item.icon;
+
+        return (
+          <div class="group rounded-2xl border border-white/5 py-6 px-4 bg-white/5 hover:bg-white/10 hover:border-white/10 transition">
+
+            <div class="flex flex-col items-center gap-3">
+
+              <div class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center group-hover:scale-105 transition">
+                <Icon className="w-8 h-8 text-violet-400" />
+              </div>
+
+              <span class="text-zinc-300 text-base md:text-lg font-medium">
+                {item.name}
+              </span>
+
+            </div>
+
+          </div>
+        );
+      })}
+
+    </div>
+
+    <!-- Bottom text -->
+    <p class="mt-10 text-sm text-zinc-600">
+      Smart links ready for your favorite platforms
+    </p>
+
+  </div>
+</section>

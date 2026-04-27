@@ -1,0 +1,67 @@
+---
+import PricingTabs from "./PricingTabs.jsx";
+import Payments from "./Payments.astro";
+
+const { t } = Astro.props;
+
+let usdRate = 17.38;
+
+try {
+  const res = await fetch(
+    "https://api.frankfurter.app/latest?from=USD&to=MXN"
+  );
+
+  const data = await res.json();
+
+  usdRate = Number(data.rates.MXN);
+} catch (error) {
+  usdRate = 17.38;
+}
+---
+
+<section id="pricing" class="py-28 bg-black relative overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <PricingTabs
+      client:load
+      initialRate={usdRate}
+      texts={{
+        monthly: t("pricing.monthly"),
+        yearly: t("pricing.yearly"),
+        onetime: t("pricing.onetime"),
+        currency: t("pricing.currency"),
+
+        start: t("pricing.start"),
+        getStarted: t("pricing.getStarted"),
+        mostPopular: t("pricing.mostPopular"),
+
+        oneTimeNote: t("pricing.oneTimeNote"),
+
+        monthlyLabel: t("pricing.monthlyLabel"),
+        yearlyLabel: t("pricing.yearlyLabel"),
+
+        free: t("pricing.free.name"),
+        starter: t("pricing.starter.name"),
+        pro: t("pricing.pro.name"),
+        max: t("pricing.max.name"),
+
+        freeDesc: t("pricing.free.desc"),
+        starterDesc: t("pricing.starter.desc"),
+        proDesc: t("pricing.pro.desc"),
+        maxDesc: t("pricing.max.desc")
+      }}
+    />
+
+    <div class="mt-7 text-center">
+      <p class="text-zinc-500 text-xs uppercase tracking-[0.25em] mb-15">
+        {t("pricing.bottom")}
+      </p>
+
+      <Payments t={t} />
+
+</div>
+
+  </div>
+
+</section>

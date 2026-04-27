@@ -1,1 +1,284 @@
-<html><body><nav>App</nav><main><slot /></main></body></html>
+---
+import "../styles/global.css";
+
+const {
+  title = "ArtistHub Dashboard",
+  description = "Manage your artist page"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="noindex,nofollow" />
+</head>
+
+<body class="bg-black text-white min-h-screen overflow-x-hidden">
+
+<!-- BG -->
+<div class="fixed inset-0 -z-20 bg-black"></div>
+<div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(139,92,246,.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(236,72,153,.12),transparent_30%)]"></div>
+
+<!-- TOPBAR -->
+<header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-2xl">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-18.5 flex items-center justify-between">
+
+    <!-- Brand -->
+    <a href="/app" class="flex items-center gap-4 group">
+      <img
+        src="/images/logo-monogram.png"
+        alt="ArtistHub"
+        class="w-11 h-11 object-contain group-hover:scale-105 transition"
+      />
+
+      <div class="leading-tight">
+        <div class="font-semibold text-white">
+          ArtistHub
+        </div>
+
+        <div class="text-xs text-zinc-500">
+          Dashboard
+        </div>
+      </div>
+    </a>
+
+    <!-- Right -->
+    <div class="flex items-center gap-3">
+
+      <div
+        id="user-pill"
+        class="hidden md:flex items-center gap-3 px-4 h-11 rounded-2xl bg-white/5 border border-white/10"
+      >
+        <img
+          id="user-avatar"
+          src="https://placehold.co/80x80"
+          class="w-7 h-7 rounded-full object-cover"
+        />
+
+        <span
+          id="user-name"
+          class="text-sm text-zinc-300"
+        >
+          Usuario
+        </span>
+      </div>
+
+      <button
+        id="logout-btn"
+        type="button"
+        class="h-11 px-5 rounded-2xl bg-white text-black text-sm font-medium hover:scale-105 transition disabled:opacity-60"
+      >
+        Cerrar sesión
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+<!-- BODY -->
+<div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+
+  <div class="grid lg:grid-cols-[280px_1fr] gap-8">
+
+    <!-- SIDEBAR -->
+    <aside class="hidden lg:block">
+
+      <div class="sticky top-28 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-4">
+
+        <!-- MENU -->
+        <nav class="space-y-2 text-sm">
+
+          <a
+            href="/app"
+            class="flex items-center justify-between h-11 px-4 rounded-2xl hover:bg-white/5 text-zinc-300 hover:text-white transition"
+          >
+            <span>Inicio</span>
+          </a>
+
+          <a
+            href="/app/profile"
+            class="flex items-center justify-between h-11 px-4 rounded-2xl hover:bg-white/5 text-zinc-300 hover:text-white transition"
+          >
+            <span>Perfil</span>
+          </a>
+
+          <a
+            href="/app/links"
+            class="flex items-center justify-between h-11 px-4 rounded-2xl hover:bg-white/5 text-zinc-300 hover:text-white transition"
+          >
+            <span>Links</span>
+          </a>
+
+          <!-- LOCKED -->
+          <a
+            href="/pricing"
+            class="flex items-center justify-between h-11 px-4 rounded-2xl bg-white/3 text-zinc-500 hover:text-white transition"
+          >
+            <span>Temas</span>
+            <span class="text-[10px] px-2 py-1 rounded-full bg-violet-500/20 text-violet-300">
+              STARTER
+            </span>
+          </a>
+
+          <a
+            href="/pricing"
+            class="flex items-center justify-between h-11 px-4 rounded-2xl bg-white/3 text-zinc-500 hover:text-white transition"
+          >
+            <span>Dominios</span>
+            <span class="text-[10px] px-2 py-1 rounded-full bg-fuchsia-500/20 text-fuchsia-300">
+              PRO
+            </span>
+          </a>
+
+          <a
+            href="/pricing"
+            class="flex items-center justify-between h-11 px-4 rounded-2xl bg-white/3 text-zinc-500 hover:text-white transition"
+          >
+            <span>Billing</span>
+            <span class="text-[10px] px-2 py-1 rounded-full bg-fuchsia-500/20 text-fuchsia-300">
+              PRO
+            </span>
+          </a>
+
+          <a
+            href="/app/settings"
+            class="flex items-center justify-between h-11 px-4 rounded-2xl hover:bg-white/5 text-zinc-300 hover:text-white transition"
+          >
+            <span>Ajustes</span>
+          </a>
+
+        </nav>
+
+        <!-- PLAN CARD -->
+        <div class="mt-6 rounded-3xl border border-violet-500/20 bg-violet-500/10 p-5">
+
+          <p class="text-xs uppercase tracking-widest text-violet-300">
+            Plan actual
+          </p>
+
+          <div class="mt-2 flex items-center justify-between">
+
+            <div>
+              <p
+                id="plan-name"
+                class="text-xl font-semibold"
+              >
+                Free
+              </p>
+
+              <p class="text-xs text-zinc-400 mt-1">
+                Empieza gratis
+              </p>
+            </div>
+
+            <div class="w-10 h-10 rounded-2xl bg-white text-black flex items-center justify-center font-bold">
+              ✦
+            </div>
+
+          </div>
+
+          <a
+            href="/pricing"
+            class="mt-5 h-11 rounded-2xl bg-white text-black text-sm font-medium flex items-center justify-center hover:scale-[1.02] transition"
+          >
+            Upgrade ahora
+          </a>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+      <slot />
+    </main>
+
+  </div>
+
+</div>
+
+<script type="module">
+  import { supabase } from "../lib/supabase";
+
+  async function boot() {
+    const {
+      data: { session }
+    } = await supabase.auth.getSession();
+
+    if (!session) {
+      location.href = "/";
+      return;
+    }
+
+    const user = session.user;
+
+    // UI user
+    const avatar = document.getElementById("user-avatar");
+    const name = document.getElementById("user-name");
+
+    if (user.user_metadata?.avatar_url) {
+      avatar.src = user.user_metadata.avatar_url;
+    }
+
+    name.textContent =
+      user.user_metadata?.full_name ||
+      user.email ||
+      "Usuario";
+
+    // profile
+    const { data } = await supabase
+      .from("profiles")
+      .select("plan, artist_name")
+      .eq("id", user.id)
+      .single();
+
+    if (data?.plan) {
+      document.getElementById("plan-name").textContent =
+        data.plan.charAt(0).toUpperCase() +
+        data.plan.slice(1);
+    }
+
+    if (data?.artist_name) {
+      name.textContent = data.artist_name;
+    }
+  }
+
+  async function logout() {
+    const btn =
+      document.getElementById("logout-btn");
+
+    btn.disabled = true;
+    btn.textContent = "Cerrando...";
+
+    await supabase.auth.signOut();
+
+    location.href = "/";
+  }
+
+  function bind() {
+    document
+      .getElementById("logout-btn")
+      ?.addEventListener("click", logout);
+  }
+
+  boot();
+  bind();
+
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      boot();
+      bind();
+    }
+  );
+</script>
+
+</body>
+</html>

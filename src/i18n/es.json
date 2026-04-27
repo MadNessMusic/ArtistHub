@@ -1,0 +1,166 @@
+{
+  "meta.title": "ArtistHub | Tu Página Artística Premium",
+  "meta.description": "Crea tu página artística premium con música, links, videos, merch y todo lo que tus fans necesitan en un solo lugar.",
+
+  "nav.features": "Funciones",
+  "nav.templates": "Templates",
+  "nav.pricing": "Planes",
+  "nav.faq": "FAQ",
+  "nav.login": "Entrar",
+  "nav.start": "Comenzar",
+
+  "hero.badge": "Hecho para artistas independientes",
+  "hero.title1": "Crea tu",
+  "hero.title2": "página artística",
+  "hero.desc": "Música, links, videos, merch y todo lo que tus fans necesitan en una página premium.",
+  "hero.cta1": "Crear Mi Página",
+  "hero.cta2": "Ver Templates",
+  "hero.feature1": "Plan gratis disponible",
+  "hero.feature2": "Fácil de personalizar",
+  "hero.feature3": "Diseño premium",
+
+  "trusted.title": "Compatible con tus plataformas favoritas",
+
+  "features.badge": "Todo en un solo lugar",
+  "features.title": "Todo lo que necesita tu carrera artística.",
+  "features.desc": "Construye tu marca y centraliza todo tu contenido en una página profesional.",
+
+  "features.profile.title": "Perfil Artista",
+  "features.profile.desc": "Foto, nombre artístico y presencia profesional.",
+
+  "features.branding.title": "Logo & Branding",
+  "features.branding.desc": "Destaca tu identidad visual con estilo.",
+
+  "features.tracks.title": "Tracks",
+  "features.tracks.desc": "Muestra tus canciones favoritas y nuevos lanzamientos.",
+
+  "features.releases.title": "Releases",
+  "features.releases.desc": "Organiza álbumes, EPs y sencillos.",
+
+  "features.links.title": "Smart Links",
+  "features.links.desc": "Un solo link para todas tus plataformas.",
+
+  "features.themes.title": "Themes",
+  "features.themes.desc": "Personaliza colores y apariencia según tu plan.",
+
+  "features.videos.title": "Videos",
+  "features.videos.desc": "Conecta YouTube y muestra videoclips.",
+
+  "features.merch.title": "Merch",
+  "features.merch.desc": "Vende ropa, accesorios o productos oficiales.",
+
+  "features.collabs.title": "Collabs",
+  "features.collabs.desc": "Destaca colaboraciones importantes.",
+
+  "features.contact.title": "Contacto",
+  "features.contact.desc": "Bookings, managers o contacto directo.",
+
+  "preview.badge": "Templates",
+  "preview.title": "Diseñado para impresionar.",
+  "preview.desc": "Templates modernos para cualquier artista.",
+
+  "pricing.badge": "Planes",
+  "pricing.title": "Elige cómo crecer.",
+  "pricing.desc": "Suscripción mensual, anual con descuento o página premium única.",
+  "pricing.bottom": "Cancela cuando quieras • Cambia de plan cuando quieras • Soporte disponible",
+
+  "pricing.free.name": "Free",
+  "pricing.starter.name": "Starter",
+  "pricing.pro.name": "Pro",
+  "pricing.max.name": "Max",
+  "pricing.pro.badge": "Más Popular",
+
+  "pricing.monthly": "Mensual",
+  "pricing.yearly": "Anual Ahorra 20%",
+  "pricing.onetime": "Pago Único",
+
+  "pricing.payments": "Formas de pago",
+  "pricing.paymentsNote": "Pagos seguros procesados con Stripe.",
+
+  "pricing.currency": "Moneda",
+
+  "pricing.start": "Comenzar Gratis",
+  "pricing.getStarted": "Empezar",
+  "pricing.mostPopular": "Más Popular",
+
+  "pricing.oneTimeNote": "Incluye 1 mes de cambios",
+
+  "pricing.monthlyLabel": "/mes",
+  "pricing.yearlyLabel": "/año",
+
+  "pricing.free.desc": "Empieza gratis con lo esencial.",
+  "pricing.starter.desc": "Nosotros creamos tu página premium por ti.",
+
+  "pricing.pro.desc": "La mejor opción para crecer como artista.",
+  "pricing.max.desc": "Todo desbloqueado para marcas serias.",
+
+  "comparison.badge": "Comparar",
+  "comparison.title": "Elige lo mejor para tu etapa.",
+  "comparison.desc": "Empieza simple y mejora cuando estés listo.",
+  "comparison.features": "Funciones",
+
+  "comparison.rows.website": "Página Profesional",
+  "comparison.rows.links": "Smart Links",
+  "comparison.rows.analytics": "Themes Premium",
+  "comparison.rows.domain": "Dominio Personalizado",
+  "comparison.rows.support": "Soporte Prioritario",
+  "comparison.rows.themes": "Todas las Secciones",
+
+  "audience.badge": "Hecho para crecer",
+  "audience.title": "Creado para artistas modernos.",
+  "audience.desc": "Desde artistas nuevos hasta marcas serias, ArtistHub se adapta a tu etapa.",
+
+  "audience.independent.title": "Artistas Independientes",
+  "audience.independent.desc": "Empieza profesional desde hoy.",
+
+  "audience.rappers.title": "Raperos y Urbanos",
+  "audience.rappers.desc": "Visual moderno para destacar releases y branding.",
+
+  "audience.producers.title": "Productores y DJs",
+  "audience.producers.desc": "Muestra beats, sets y links de contratación.",
+
+  "audience.bands.title": "Bandas y Grupos",
+  "audience.bands.desc": "Organiza integrantes, shows y lanzamientos.",
+
+  "audience.managers.title": "Managers",
+  "audience.managers.desc": "Centraliza presencia digital de tus artistas.",
+
+  "audience.creators.title": "Creadores",
+  "audience.creators.desc": "Una página poderosa para tu audiencia.",
+
+  "audience.bottom.title": "Tu marca merece más que un solo link.",
+  "audience.bottom.desc": "Convierte seguidores en fans con una presencia artística real.",
+
+  "faq.badge": "FAQ",
+  "faq.title": "Preguntas frecuentes",
+  "faq.desc": "Todo lo que necesitas saber antes de comenzar.",
+  "faq.q1": "¿Puedo comenzar gratis?",
+"faq.a1": "Sí, puedes comenzar con el plan Free y mejorar cuando quieras.",
+
+"faq.q2": "¿Puedo cambiar de plan después?",
+"faq.a2": "Sí, puedes mejorar o cambiar tu plan en cualquier momento.",
+
+"faq.q3": "¿Puedo usar mi propio dominio?",
+"faq.a3": "Sí, disponible en planes avanzados.",
+
+"faq.q4": "¿Funciona en móvil?",
+"faq.a4": "Sí, todas las páginas están optimizadas para móvil.",
+
+"faq.q5": "¿Puedo vender merch?",
+"faq.a5": "Sí, puedes conectar productos y links de venta.",
+
+"faq.q6": "¿Puedo cancelar cuando quiera?",
+"faq.a6": "Sí, no hay contratos forzosos.",
+
+"footer.navigation": "Navegación",
+"footer.social": "Redes",
+"footer.privacy": "Privacidad",
+"footer.terms": "Términos",
+"footer.rights": "Todos los derechos reservados.",
+
+  "cta.badge": "Empieza Hoy",
+  "cta.title": "Tu carrera merece verse profesional.",
+  "cta.desc": "Crea tu página artística en minutos y comparte todo en un solo lugar.",
+  "cta.button": "Crear Mi Página"
+
+}

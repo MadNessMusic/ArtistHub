@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/LandingLayout.astro";
+
+import Navbar from "../components/landing/Navbar.astro";
+import Hero from "../components/landing/Hero.astro";
+import Trusted from "../components/landing/Trusted.astro";
+import Features from "../components/landing/Features.astro";
+import Preview from "../components/landing/Preview.astro";
+import Pricing from "../components/landing/Pricing.astro";
+import Comparison from "../components/landing/Comparison.astro";
+import Audience from "../components/landing/Audience.astro";
+import CTA from "../components/landing/CTA.astro";
+import FAQ from "../components/landing/FAQ.astro";
+import Footer from "../components/landing/Footer.astro";
+
+const { lang, t } = Astro.props;
+---
+
+<Layout lang={lang} t={t}>
+
+  <Navbar lang={lang} t={t} />
+
+  <main>
+    <Hero t={t} />
+    <Trusted t={t} />
+    <Features t={t} />
+    <Preview t={t} />
+    <Pricing t={t} />
+    <Comparison t={t} />
+    <Audience t={t} />
+    <CTA t={t} />
+    <FAQ t={t} />
+  </main>
+
+  <Footer lang={lang} t={t} />
+
+</Layout>

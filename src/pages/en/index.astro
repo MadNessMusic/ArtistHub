@@ -1,0 +1,11 @@
+---
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import HomePage from "../../components/HomePage.astro";
+import { useTranslations } from "../../i18n";
+
+const t = useTranslations("en");
+---
+
+<LandingLayout lang="en" t={t}>
+  <HomePage lang="en" t={t} />
+</LandingLayout>

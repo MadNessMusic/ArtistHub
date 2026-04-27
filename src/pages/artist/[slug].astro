@@ -1,6 +1,6 @@
 ---
-import Basic from '../../templates/basic/BasicTemplate.astro';
+import starter from '../../templates/starter/starterTemplate.astro';
 const {slug}=Astro.params;
-const artist={artist_name:slug,plan:'basic'};
+const artist={artist_name:slug,plan:'starter'};
 ---
-<Basic artist={artist} />
+<starter artist={artist} />

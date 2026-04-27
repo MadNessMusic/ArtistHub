@@ -1,0 +1,166 @@
+{
+  "meta.title": "ArtistHub | Your Premium Artist Page",
+  "meta.description": "Create your premium artist page with music, links, videos, merch and everything your fans need in one place.",
+
+  "nav.features": "Features",
+  "nav.templates": "Templates",
+  "nav.pricing": "Pricing",
+  "nav.faq": "FAQ",
+  "nav.login": "Login",
+  "nav.start": "Start Free",
+
+  "hero.badge": "Built for independent artists",
+  "hero.title1": "Build your",
+  "hero.title2": "artist page",
+  "hero.desc": "Music, links, videos, merch and everything your fans need in one premium page.",
+  "hero.cta1": "Create My Page",
+  "hero.cta2": "View Templates",
+  "hero.feature1": "Free plan available",
+  "hero.feature2": "Easy to customize",
+  "hero.feature3": "Premium design",
+
+  "trusted.title": "Compatible with your favorite platforms",
+
+  "features.badge": "Everything in one place",
+  "features.title": "Everything your artist career needs.",
+  "features.desc": "Build your brand and centralize all your content in one professional page.",
+
+  "features.profile.title": "Artist Profile",
+  "features.profile.desc": "Photo, artist name and professional presence.",
+
+  "features.branding.title": "Logo & Branding",
+  "features.branding.desc": "Stand out with your visual identity.",
+
+  "features.tracks.title": "Tracks",
+  "features.tracks.desc": "Showcase your favorite songs and new releases.",
+
+  "features.releases.title": "Releases",
+  "features.releases.desc": "Organize albums, EPs and singles.",
+
+  "features.links.title": "Smart Links",
+  "features.links.desc": "One link for every platform.",
+
+  "features.themes.title": "Themes",
+  "features.themes.desc": "Customize colors and appearance based on your plan.",
+
+  "features.videos.title": "Videos",
+  "features.videos.desc": "Connect YouTube and showcase music videos.",
+
+  "features.merch.title": "Merch",
+  "features.merch.desc": "Sell clothing, accessories or official products.",
+
+  "features.collabs.title": "Collabs",
+  "features.collabs.desc": "Highlight important collaborations.",
+
+  "features.contact.title": "Contact",
+  "features.contact.desc": "Bookings, managers or direct contact.",
+
+  "preview.badge": "Templates",
+  "preview.title": "Designed to impress.",
+  "preview.desc": "Modern templates for every artist.",
+
+  "pricing.badge": "Pricing",
+  "pricing.title": "Choose how to grow.",
+  "pricing.desc": "Monthly subscription, yearly savings or one-time premium page.",
+  "pricing.bottom": "Cancel anytime • Change plans anytime • Support available",
+
+  "pricing.free.name": "Free",
+  "pricing.starter.name": "Starter",
+  "pricing.pro.name": "Pro",
+  "pricing.max.name": "Max",
+  "pricing.pro.badge": "Most Popular",
+
+  "pricing.monthly": "Monthly",
+  "pricing.yearly": "Yearly Save 20%",
+  "pricing.onetime": "One-Time",
+
+  "pricing.payments": "Payment Methods",
+  "pricing.paymentsNote": "Secure payments processed with Stripe.",
+
+  "pricing.currency": "Currency",
+
+  "pricing.start": "Start Free",
+  "pricing.getStarted": "Get Started",
+  "pricing.mostPopular": "Most Popular",
+
+  "pricing.oneTimeNote": "1 month of changes included",
+
+  "pricing.monthlyLabel": "/month",
+  "pricing.yearlyLabel": "/year",
+
+  "pricing.free.desc": "Start free with the essentials.",
+  "pricing.starter.desc": "We build your premium page for you.",
+
+  "pricing.pro.desc": "Best value for serious artist growth.",
+  "pricing.max.desc": "Everything unlocked for serious brands.",
+
+  "comparison.badge": "Compare",
+  "comparison.title": "Choose what fits your stage.",
+  "comparison.desc": "Start simple and upgrade whenever you're ready.",
+  "comparison.features": "Features",
+
+  "comparison.rows.website": "Professional Page",
+  "comparison.rows.links": "Smart Links",
+  "comparison.rows.analytics": "Premium Themes",
+  "comparison.rows.domain": "Custom Domain",
+  "comparison.rows.support": "Priority Support",
+  "comparison.rows.themes": "All Sections",
+
+  "audience.badge": "Built for growth",
+  "audience.title": "Made for modern artists.",
+  "audience.desc": "From new artists to serious brands, ArtistHub adapts to your stage.",
+
+  "audience.independent.title": "Independent Artists",
+  "audience.independent.desc": "Start looking professional today.",
+
+  "audience.rappers.title": "Rappers & Urban Artists",
+  "audience.rappers.desc": "Modern visuals to showcase releases and branding.",
+
+  "audience.producers.title": "Producers & DJs",
+  "audience.producers.desc": "Showcase beats, sets and booking links.",
+
+  "audience.bands.title": "Bands & Groups",
+  "audience.bands.desc": "Organize members, shows and releases.",
+
+  "audience.managers.title": "Managers",
+  "audience.managers.desc": "Centralize your artists' digital presence.",
+
+  "audience.creators.title": "Creators",
+  "audience.creators.desc": "One powerful page for your audience.",
+
+  "audience.bottom.title": "Your brand deserves more than one link.",
+  "audience.bottom.desc": "Turn followers into fans with a real artist presence.",
+
+  "faq.badge": "FAQ",
+  "faq.title": "Frequently asked questions",
+  "faq.desc": "Everything you need to know before getting started.",
+  "faq.q1": "Can I start for free?",
+"faq.a1": "Yes, you can start with the Free plan and upgrade anytime.",
+
+"faq.q2": "Can I change plans later?",
+"faq.a2": "Yes, you can upgrade or switch plans anytime.",
+
+"faq.q3": "Can I use my own domain?",
+"faq.a3": "Yes, available on advanced plans.",
+
+"faq.q4": "Is it mobile friendly?",
+"faq.a4": "Yes, all pages are fully optimized for mobile.",
+
+"faq.q5": "Can I sell merch?",
+"faq.a5": "Yes, you can connect products and store links.",
+
+"faq.q6": "Can I cancel anytime?",
+"faq.a6": "Yes, there are no forced contracts.",
+
+"footer.navigation": "Navigation",
+"footer.social": "Social",
+"footer.privacy": "Privacy",
+"footer.terms": "Terms",
+"footer.rights": "All rights reserved.",
+
+  "cta.badge": "Start Today",
+  "cta.title": "Your career deserves to look professional.",
+  "cta.desc": "Create your artist page in minutes and share everything in one place.",
+  "cta.button": "Create My Page"
+
+}

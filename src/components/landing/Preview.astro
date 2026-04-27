@@ -1,0 +1,136 @@
+---
+import {
+  Sparkles,
+  Crown,
+  ArrowRight
+} from "lucide-react";
+
+import { BsRocketTakeoff, BsGem} from "react-icons/bs";
+
+const { t } = Astro.props;
+
+const plans = [
+  {
+    name: t("pricing.starter.name"),
+    badge: "Starter",
+    icon: BsRocketTakeoff,
+    file: "/images/previews/starter-plan.gif",
+    cta: "Choose Starter"
+  },
+  {
+    name: t("pricing.pro.name"),
+    badge: t("pricing.pro.badge"),
+    icon: BsGem,
+    file: "/images/previews/pro-plan.gif",
+    cta: "Get Pro",
+    featured: true
+  },
+  {
+    name: t("pricing.max.name"),
+    badge: "Premium",
+    icon: Crown,
+    file: "/images/previews/max-plan.gif",
+    cta: "Go Max"
+  }
+];
+---
+
+<section id="templates" class="py-28 bg-black relative overflow-hidden">
+
+  <!-- Glow -->
+  <div class="absolute top-20 left-1/2 -translate-x-1/2 w-225 h-225 rounded-full bg-violet-600/10 blur-[180px]"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-18">
+
+      <p class="text-violet-400 font-medium mb-3">
+        {t("preview.badge")}
+      </p>
+
+      <h2 class="text-4xl md:text-6xl text-white font-semibold tracking-tight">
+        {t("preview.title")}
+      </h2>
+
+      <p class="mt-5 text-zinc-400 text-lg">
+        {t("preview.desc")}
+      </p>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="grid xl:grid-cols-3 gap-7">
+
+      {plans.map((plan) => {
+        const Icon = plan.icon;
+
+        return (
+          <div
+            class={`group rounded-4xl border p-6 transition duration-300 hover:-translate-y-2
+            ${
+              plan.featured
+                ? "border-violet-500/35 bg-violet-500/5 shadow-2xl shadow-violet-500/15"
+                : "border-white/10 bg-white/5 hover:bg-white/7"
+            }`}
+          >
+
+            <!-- GIF ONLY -->
+            <div class="relative rounded-4xl overflow-hidden border border-white/10 bg-black">
+
+              <img
+                src={plan.file}
+                alt={plan.name}
+                loading="lazy"
+                class="w-full h-auto object-cover group-hover:scale-[1.02] transition duration-500"
+              />
+
+              <!-- shine -->
+              <div class="absolute inset-0 bg-linear-to-t from-black/10 to-transparent pointer-events-none"></div>
+
+            </div>
+
+            <!-- Bottom -->
+            <div class="mt-6 flex items-start justify-between gap-4">
+
+              <div>
+
+                <h3 class="text-white text-2xl font-semibold">
+                  {plan.name}
+                </h3>
+
+                <p class="text-zinc-500 mt-1">
+                  {plan.badge}
+                </p>
+
+              </div>
+
+              <div class="w-11 h-11 rounded-2xl bg-white/5 flex items-center justify-center shrink-0">
+                <Icon className="w-4 h-4 text-violet-400" />
+              </div>
+
+            </div>
+
+            <!-- CTA -->
+            <a
+              href="#pricing"
+              class={`mt-6 w-full py-3 rounded-2xl font-medium flex items-center justify-center gap-2 transition
+              ${
+                plan.featured
+                  ? "bg-white text-black hover:scale-[1.02]"
+                  : "border border-white/10 text-white hover:bg-white/10"
+              }`}
+            >
+              {plan.cta}
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+          </div>
+        );
+      })}
+
+    </div>
+
+  </div>
+
+</section>

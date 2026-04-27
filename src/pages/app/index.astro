@@ -1,4 +1,383 @@
 ---
 import AppLayout from "../../layouts/AppLayout.astro";
 ---
-<AppLayout><h1>Dashboard</h1></AppLayout>
+
+<AppLayout title="Dashboard | ArtistHub">
+
+<section>
+
+  <!-- HERO -->
+  <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+
+      <div>
+
+        <p class="text-sm text-violet-300 uppercase tracking-widest">
+          Dashboard
+        </p>
+
+        <h1
+          id="hero-name"
+          class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight"
+        >
+          Hola 👋
+        </h1>
+
+        <p class="mt-4 text-zinc-400 text-lg max-w-2xl">
+          Administra tu página artística, comparte tu link y crece tu presencia online.
+        </p>
+
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 min-w-70">
+
+        <a
+          id="public-link-btn"
+          href="#"
+          target="_blank"
+          class="h-12 rounded-2xl bg-white text-black font-medium flex items-center justify-center hover:scale-[1.02] transition"
+        >
+          Ver página
+        </a>
+
+        <a
+          href="/app/profile"
+          class="h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition"
+        >
+          Editar perfil
+        </a>
+
+        <a
+          href="/pricing"
+          class="col-span-2 h-12 rounded-2xl bg-linear-to-r from-violet-500 to-fuchsia-500 text-white font-medium flex items-center justify-center hover:scale-[1.01] transition"
+        >
+          Upgrade a Pro ✦
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- STATS -->
+  <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
+
+    <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+      <p class="text-sm text-zinc-400">Plan actual</p>
+      <h3
+        id="stat-plan"
+        class="mt-3 text-2xl font-semibold"
+      >
+        Free
+      </h3>
+    </div>
+
+    <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+      <p class="text-sm text-zinc-400">Estado</p>
+      <h3
+        id="stat-status"
+        class="mt-3 text-2xl font-semibold"
+      >
+        Borrador
+      </h3>
+    </div>
+
+    <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+      <p class="text-sm text-zinc-400">Visitas</p>
+      <h3 class="mt-3 text-2xl font-semibold">
+        0
+      </h3>
+    </div>
+
+    <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+      <p class="text-sm text-zinc-400">Tu URL</p>
+      <h3
+        id="stat-url"
+        class="mt-3 text-sm text-zinc-300 break-all"
+      >
+        artisthub.com/username
+      </h3>
+    </div>
+
+  </div>
+
+  <!-- GRID -->
+  <div class="grid xl:grid-cols-[1.1fr_.9fr] gap-8 mt-8">
+
+    <!-- CHECKLIST -->
+    <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
+
+      <div class="flex items-center justify-between gap-4">
+
+        <div>
+          <h2 class="text-2xl font-semibold">
+            Checklist de lanzamiento
+          </h2>
+
+          <p class="mt-2 text-zinc-400">
+            Completa estos pasos para activar tu perfil al máximo.
+          </p>
+        </div>
+
+        <div
+          id="progress-pill"
+          class="px-4 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center text-sm text-zinc-300"
+        >
+          0 / 4
+        </div>
+
+      </div>
+
+      <div class="space-y-3 mt-8">
+
+        <div
+          id="check-avatar"
+          class="h-14 rounded-2xl bg-black/30 border border-white/10 px-5 flex items-center justify-between"
+        >
+          <span>Subir avatar</span>
+          <span>⬜</span>
+        </div>
+
+        <div
+          id="check-bio"
+          class="h-14 rounded-2xl bg-black/30 border border-white/10 px-5 flex items-center justify-between"
+        >
+          <span>Agregar biografía</span>
+          <span>⬜</span>
+        </div>
+
+        <div
+          id="check-links"
+          class="h-14 rounded-2xl bg-black/30 border border-white/10 px-5 flex items-center justify-between"
+        >
+          <span>Agregar links</span>
+          <span>⬜</span>
+        </div>
+
+        <div
+          id="check-publish"
+          class="h-14 rounded-2xl bg-black/30 border border-white/10 px-5 flex items-center justify-between"
+        >
+          <span>Publicar página</span>
+          <span>⬜</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SIDE -->
+    <div class="space-y-8">
+
+      <!-- PAGE CARD -->
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
+
+        <h2 class="text-2xl font-semibold">
+          Tu página pública
+        </h2>
+
+        <p class="mt-2 text-zinc-400">
+          Comparte tu perfil con fans, marcas y colaboradores.
+        </p>
+
+        <div class="mt-6 rounded-3xl bg-black/40 border border-white/10 p-5">
+
+          <div class="flex items-center gap-4">
+
+            <img
+              id="mini-avatar"
+              src="https://placehold.co/80x80"
+              class="w-14 h-14 rounded-2xl object-cover"
+            />
+
+            <div>
+              <p
+                id="mini-name"
+                class="font-medium"
+              >
+                Tu nombre
+              </p>
+
+              <p
+                id="mini-url"
+                class="text-sm text-zinc-500"
+              >
+                /username
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <a
+          id="public-link-card"
+          href="#"
+          target="_blank"
+          class="mt-5 h-12 rounded-2xl bg-white text-black font-medium flex items-center justify-center"
+        >
+          Abrir página
+        </a>
+
+      </div>
+
+      <!-- UPGRADE -->
+      <div class="rounded-3xl border border-violet-500/20 bg-violet-500/10 p-8">
+
+        <p class="text-sm uppercase tracking-widest text-violet-300">
+          Upgrade
+        </p>
+
+        <h2 class="mt-3 text-2xl font-semibold">
+          Desbloquea funciones Pro
+        </h2>
+
+        <p class="mt-3 text-zinc-300">
+          Temas premium, dominios personalizados y más herramientas para crecer.
+        </p>
+
+        <a
+          href="/pricing"
+          class="mt-6 h-12 rounded-2xl bg-white text-black font-medium flex items-center justify-center"
+        >
+          Ver planes
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script type="module">
+  import { supabase } from "../../lib/supabase";
+
+  async function loadDashboard() {
+    const {
+      data: { session }
+    } = await supabase.auth.getSession();
+
+    if (!session) {
+      location.href = "/";
+      return;
+    }
+
+    const user = session.user;
+
+    const { data: profile } =
+      await supabase
+        .from("profiles")
+        .select("*")
+        .eq("id", user.id)
+        .single();
+
+    const { data: page } =
+      await supabase
+        .from("artist_pages")
+        .select("*")
+        .eq("user_id", user.id)
+        .single();
+
+    const artistName =
+      profile?.artist_name ||
+      "Artista";
+
+    const username =
+      profile?.username ||
+      "username";
+
+    const avatar =
+      profile?.avatar_url ||
+      "https://placehold.co/120x120";
+
+    document.getElementById("hero-name").textContent =
+      `Hola ${artistName} 👋`;
+
+    document.getElementById("stat-plan").textContent =
+      profile?.plan || "Free";
+
+    document.getElementById("stat-status").textContent =
+      page?.published
+        ? "Publicado"
+        : "Borrador";
+
+    document.getElementById("stat-url").textContent =
+      `artisthub.com/${username}`;
+
+    document.getElementById("mini-name").textContent =
+      artistName;
+
+    document.getElementById("mini-url").textContent =
+      `/${username}`;
+
+    document.getElementById("mini-avatar").src =
+      avatar;
+
+    const publicUrl =
+      `/artist/${username}`;
+
+    document
+      .getElementById("public-link-btn")
+      .setAttribute("href", publicUrl);
+
+    document
+      .getElementById("public-link-card")
+      .setAttribute("href", publicUrl);
+
+    // Checklist
+    let progress = 0;
+
+    if (profile?.avatar_url) {
+      mark("check-avatar");
+      progress++;
+    }
+
+    if (profile?.bio) {
+      mark("check-bio");
+      progress++;
+    }
+
+    if (
+      profile?.instagram ||
+      profile?.spotify
+    ) {
+      mark("check-links");
+      progress++;
+    }
+
+    if (page?.published) {
+      mark("check-publish");
+      progress++;
+    }
+
+    document.getElementById(
+      "progress-pill"
+    ).textContent =
+      `${progress} / 4`;
+  }
+
+  function mark(id) {
+    const el =
+      document.getElementById(id);
+
+    el.querySelector("span:last-child")
+      .textContent = "✔";
+
+    el.classList.add(
+      "border-violet-500/30"
+    );
+  }
+
+  loadDashboard();
+
+  document.addEventListener(
+    "astro:page-load",
+    loadDashboard
+  );
+</script>
+
+</AppLayout>

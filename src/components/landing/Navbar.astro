@@ -1,0 +1,345 @@
+---
+import {
+  Globe,
+  Sparkles,
+  LogIn,
+  Menu,
+  ChevronDown,
+  User,
+  LogOut,
+  LayoutDashboard,
+  X
+} from "lucide-react";
+
+import AuthModal from "../auth/AuthModal.jsx";
+
+const { t, lang } = Astro.props;
+
+const current =
+  lang === "es"
+    ? "Español"
+    : lang === "en"
+    ? "English"
+    : "Français";
+
+const homeUrl =
+  lang === "es"
+    ? "/"
+    : `/${lang}`;
+---
+
+<header class="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/70 backdrop-blur-2xl">
+
+  <!-- glow -->
+  <div class="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-violet-500/50 to-transparent"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10 h-18.5 flex items-center justify-between">
+
+    <!-- LOGO -->
+    <a
+      href={homeUrl}
+      class="flex items-center gap-4 shrink-0 group"
+    >
+      <img
+        src="/images/logo-monogram.png"
+        alt="ArtistHub"
+        class="w-11 h-11 object-contain transition duration-300 group-hover:scale-105"
+      />
+
+      <div class="leading-tight">
+        <div class="text-white font-bold text-lg tracking-tight">
+          ArtistHub
+        </div>
+
+        <div class="text-xs text-zinc-500 -mt-0.5">
+          Artist Pages
+        </div>
+      </div>
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="hidden lg:flex items-center gap-8 text-sm text-zinc-400">
+
+      <a href="#features" class="hover:text-white transition">
+        {t("nav.features")}
+      </a>
+
+      <a href="#templates" class="hover:text-white transition">
+        {t("nav.templates")}
+      </a>
+
+      <a href="#pricing" class="hover:text-white transition">
+        {t("nav.pricing")}
+      </a>
+
+      <a href="#faq" class="hover:text-white transition">
+        {t("nav.faq")}
+      </a>
+
+    </nav>
+
+    <!-- RIGHT -->
+    <div class="hidden lg:flex items-center gap-3">
+
+      <!-- LANGUAGE -->
+      <div class="relative" id="lang-menu">
+
+        <button
+          id="lang-trigger"
+          class="h-11 px-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-center gap-2 text-sm text-white"
+        >
+          <Globe className="w-4 h-4" />
+          <span>{current}</span>
+          <ChevronDown className="w-4 h-4 text-zinc-500" />
+        </button>
+
+        <div
+          id="lang-dropdown"
+          class="hidden absolute top-14 right-0 w-56 rounded-2xl border border-white/10 bg-zinc-950/95 backdrop-blur-xl shadow-2xl p-2"
+        >
+
+          <a
+            href="/"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-white hover:bg-white/5 transition"
+          >
+            🇪🇸 Español
+          </a>
+
+          <a
+            href="/en"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-white hover:bg-white/5 transition"
+          >
+            🇺🇸 English
+          </a>
+
+          <a
+            href="/fr"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-white hover:bg-white/5 transition"
+          >
+            🇫🇷 Français
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- GUEST ACTIONS -->
+      <div
+        id="guest-actions"
+        class="flex items-center gap-3"
+      >
+
+        <button
+          data-auth="login"
+          class="h-11 px-4 rounded-2xl text-sm text-zinc-300 hover:text-white hover:bg-white/5 transition flex items-center gap-2"
+        >
+          <LogIn className="w-4 h-4" />
+          {t("nav.login")}
+        </button>
+
+        <button
+          data-auth="signup"
+          class="h-11 px-5 rounded-2xl bg-white text-black text-sm font-medium hover:scale-105 transition flex items-center gap-2 shadow-lg"
+        >
+          <Sparkles className="w-4 h-4" />
+          {t("nav.start")}
+        </button>
+
+      </div>
+
+      <!-- USER MENU -->
+      <div
+        id="user-actions"
+        class="hidden items-center gap-3"
+      >
+
+        <a
+          href="/dashboard"
+          class="h-11 px-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-center gap-2 text-sm text-white"
+        >
+          <LayoutDashboard className="w-4 h-4" />
+          Dashboard
+        </a>
+
+        <button
+          id="logout-btn"
+          class="h-11 w-11 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition flex items-center justify-center text-white"
+          title="Logout"
+        >
+          <LogOut className="w-4 h-4" />
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- MOBILE -->
+    <div class="lg:hidden flex items-center gap-3">
+
+      <button
+        id="mobile-menu-btn"
+        class="w-11 h-11 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white"
+      >
+        <Menu className="w-5 h-5" />
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- MOBILE PANEL -->
+<div
+  id="mobile-panel"
+  class="hidden fixed inset-0 z-60 bg-black/80 backdrop-blur-md lg:hidden"
+>
+
+  <div class="absolute right-0 top-0 h-full w-[320px] bg-zinc-950 border-l border-white/10 p-6">
+
+    <div class="flex items-center justify-between mb-8">
+
+      <div class="text-white font-semibold text-lg">
+        Menu
+      </div>
+
+      <button
+        id="close-mobile"
+        class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white"
+      >
+        <X className="w-5 h-5" />
+      </button>
+
+    </div>
+
+    <div class="space-y-2 text-zinc-300">
+
+      <a href="#features" class="block px-4 py-3 rounded-xl hover:bg-white/5">
+        {t("nav.features")}
+      </a>
+
+      <a href="#templates" class="block px-4 py-3 rounded-xl hover:bg-white/5">
+        {t("nav.templates")}
+      </a>
+
+      <a href="#pricing" class="block px-4 py-3 rounded-xl hover:bg-white/5">
+        {t("nav.pricing")}
+      </a>
+
+      <a href="#faq" class="block px-4 py-3 rounded-xl hover:bg-white/5">
+        {t("nav.faq")}
+      </a>
+
+    </div>
+
+    <div class="border-t border-white/10 my-6"></div>
+
+    <div class="space-y-3">
+
+      <a href="/" class="block px-4 py-3 rounded-xl bg-white/5 text-white">
+        🇪🇸 Español
+      </a>
+
+      <a href="/en" class="block px-4 py-3 rounded-xl bg-white/5 text-white">
+        🇺🇸 English
+      </a>
+
+      <a href="/fr" class="block px-4 py-3 rounded-xl bg-white/5 text-white">
+        🇫🇷 Français
+      </a>
+
+    </div>
+
+    <div class="mt-8 space-y-3">
+
+<button
+  data-auth="login"
+  class="w-full h-12 rounded-2xl bg-white/5 text-white"
+>
+  {t("nav.login")}
+</button>
+
+<button
+  data-auth="signup"
+  class="w-full h-12 rounded-2xl bg-white text-black font-medium"
+>
+  {t("nav.start")}
+</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<AuthModal client:load />
+
+<script>
+  function initNavbar() {
+    const mobileBtn =
+      document.getElementById("mobile-menu-btn");
+
+    const mobilePanel =
+      document.getElementById("mobile-panel");
+
+    const closeMobile =
+      document.getElementById("close-mobile");
+
+    if (mobileBtn) {
+      mobileBtn.onclick = () => {
+        if (mobilePanel) {
+          mobilePanel.classList.remove("hidden");
+        }
+      };
+    }
+
+    if (closeMobile) {
+      closeMobile.onclick = () => {
+        if (mobilePanel) {
+          mobilePanel.classList.add("hidden");
+        }
+      };
+    }
+
+    if (mobilePanel) {
+      mobilePanel.onclick = (e) => {
+        if (e.target === mobilePanel) {
+          mobilePanel.classList.add("hidden");
+        }
+      };
+    }
+
+    const trigger =
+      document.getElementById("lang-trigger");
+
+    const dropdown =
+      document.getElementById("lang-dropdown");
+
+    if (trigger) {
+      trigger.onclick = (e) => {
+        e.stopPropagation();
+        if (dropdown) {
+          dropdown.classList.toggle("hidden");
+        }
+      };
+    }
+
+    if (dropdown) {
+      dropdown.onclick = (e) => {
+        e.stopPropagation();
+      };
+    }
+
+    document.onclick = () => {
+      if (dropdown) {
+        dropdown.classList.add("hidden");
+      }
+    };
+  }
+
+  initNavbar();
+  document.addEventListener(
+    "astro:page-load",
+    initNavbar
+  );
+</script>

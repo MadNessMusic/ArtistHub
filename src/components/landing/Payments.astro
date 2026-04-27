@@ -1,0 +1,71 @@
+---
+import {
+  FaCcVisa,
+  FaCcMastercard,
+  FaCcAmex,
+  FaPaypal,
+  FaApplePay,
+  FaGooglePay,
+  FaShieldHalved
+} from "react-icons/fa6";
+
+const { t } = Astro.props;
+---
+
+<div class="mt-15 text-center">
+
+  <p class="text-zinc-500 text-sm uppercase tracking-[0.25em] mb-6">
+    {t("pricing.payments")}
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-3">
+
+    <!-- Visa -->
+    <div class="px-4 h-11 rounded-2xl border border-white/10 bg-white/5 text-sm text-zinc-300 flex items-center gap-2">
+      <FaCcVisa className="text-lg" />
+      Visa
+    </div>
+
+    <!-- Mastercard -->
+    <div class="px-4 h-11 rounded-2xl border border-white/10 bg-white/5 text-sm text-zinc-300 flex items-center gap-2">
+      <FaCcMastercard className="text-lg" />
+      Mastercard
+    </div>
+
+    <!-- Amex -->
+    <div class="px-4 h-11 rounded-2xl border border-white/10 bg-white/5 text-sm text-zinc-300 flex items-center gap-2">
+      <FaCcAmex className="text-lg" />
+      Amex
+    </div>
+
+    <!-- PayPal -->
+    <div class="px-4 h-11 rounded-2xl border border-white/10 bg-white/5 text-sm text-zinc-300 flex items-center gap-2">
+      <FaPaypal className="text-lg" />
+      PayPal
+    </div>
+
+    <!-- Apple Pay -->
+    <div class="px-4 h-11 rounded-2xl border border-white/10 bg-white/5 text-sm text-zinc-300 flex items-center gap-2">
+      <FaApplePay className="text-lg" />
+      Apple Pay
+    </div>
+
+    <!-- Google Pay -->
+    <div class="px-4 h-11 rounded-2xl border border-white/10 bg-white/5 text-sm text-zinc-300 flex items-center gap-2">
+      <FaGooglePay className="text-lg" />
+      Google Pay
+    </div>
+
+    <!-- Secure -->
+    <div class="px-4 h-11 rounded-2xl border border-white/10 bg-white/5 text-sm text-zinc-300 flex items-center gap-2">
+      <FaShieldHalved className="text-lg" />
+      Stripe Secure
+    </div>
+
+  </div>
+
+  <p class="text-xs text-zinc-500 mt-5">
+    {t("pricing.paymentsNote")}
+  </p>
+
+</div>

@@ -1,0 +1,205 @@
+---
+import {
+  Check,
+  Minus,
+  Gem,
+  Crown,
+  Link,
+  Rocket
+} from "lucide-react";
+
+const { t } = Astro.props;
+
+const plans = ["free", "starter", "pro", "max"];
+
+const rows = [
+  { key: "links", values: [true, true, true, true] },
+  { key: "website", values: [false, true, true, true] },
+  { key: "analytics", values: [false, false, true, true] },
+  { key: "support", values: [false, false, true, true] },
+  { key: "themes", values: [false, false, true, true] },
+  { key: "domain", values: [false, false, false, true] },
+];
+---
+
+<section id="comparison" class="py-28 bg-black">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+
+      <p class="text-violet-400 font-medium mb-3">
+        {t("comparison.badge")}
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+        {t("comparison.title")}
+      </h2>
+
+      <p class="mt-5 text-lg text-zinc-400">
+        {t("comparison.desc")}
+      </p>
+
+    </div>
+
+    <!-- Desktop Table -->
+    <div class="hidden xl:block overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+
+      <!-- Header -->
+      <div class="grid grid-cols-5 border-b border-white/10">
+
+        <div class="p-6 text-zinc-500 font-medium">
+          {t("comparison.features")}
+        </div>
+
+        {plans.map((plan) => {
+  const isFree = plan === "free";
+  const isStarter = plan === "starter";
+  const isPro = plan === "pro";
+  const isMax = plan === "max";
+
+          return (
+            <div
+              class={`p-6 text-center font-semibold text-sm uppercase tracking-[0.2em]
+              ${
+                isStarter
+                  ? "text-cyan-300"
+                   :
+                isPro
+                  ? "text-violet-300 bg-violet-500/10"
+                  : isMax
+                  ? "text-yellow-300"
+                  : "text-zinc-300"
+              }`}
+            >
+              <div class="flex items-center justify-center gap-2">
+
+                {isFree && <Link className="w-4 h-4 text-zinc-400" />}
+{isStarter && <Rocket className="w-4 h-4 text-cyan-400" />}
+{isPro && <Gem className="w-4 h-4 text-violet-400" />}
+{isMax && <Crown className="w-4 h-4 text-yellow-400" />}
+
+                {t(`pricing.${plan}.name`)}
+
+              </div>
+            </div>
+          );
+        })}
+
+      </div>
+
+      <!-- Rows -->
+      {rows.map((row, rowIndex) => (
+        <div
+          class={`grid grid-cols-5 ${
+            rowIndex !== rows.length - 1
+              ? "border-b border-white/5"
+              : ""
+          }`}
+        >
+
+          <div class="p-6 text-zinc-300">
+            {t(`comparison.rows.${row.key}`)}
+          </div>
+
+          {row.values.map((value, index) => {
+            const isPro = index === 2;
+
+            return (
+              <div
+                class={`p-6 flex justify-center ${
+                  isPro ? "bg-violet-500/5" : ""
+                }`}
+              >
+                {value ? (
+                  <Check className="w-5 h-5 text-violet-400" />
+                ) : (
+                  <Minus className="w-5 h-5 text-zinc-600" />
+                )}
+              </div>
+            );
+          })}
+
+        </div>
+      ))}
+
+    </div>
+
+    <!-- Mobile / Tablet Cards -->
+    <div class="grid md:grid-cols-2 gap-6 xl:hidden">
+
+      {plans.map((plan, planIndex) => {
+        const isFree = plan === "free";
+const isStarter = plan === "starter";
+const isPro = plan === "pro";
+const isMax = plan === "max";
+
+        return (
+          <div
+            class={`rounded-3xl border p-6 bg-white/5
+            ${
+              isPro
+                ? "border-violet-500/30"
+                : isMax
+                ? "border-yellow-500/20"
+                : "border-white/10"
+            }`}
+          >
+
+            <div class="flex items-center gap-2 mb-6">
+
+              {isFree && <Link className="w-4 h-4 text-zinc-400" />}
+{isStarter && <Rocket className="w-4 h-4 text-cyan-400" />}
+{isPro && <Gem className="w-4 h-4 text-violet-400" />}
+{isMax && <Crown className="w-4 h-4 text-yellow-400" />}
+
+              <h3
+                class={`text-xl font-semibold
+                ${
+                  isStarter
+                    ? "text-cyan-300"
+                     :
+                  isPro
+                    ? "text-violet-300"
+                    : isMax
+                    ? "text-yellow-300"
+                    : "text-white"
+                }`}
+              >
+                {t(`pricing.${plan}.name`)}
+              </h3>
+
+            </div>
+
+            <div class="space-y-4">
+
+              {rows.map((row) => {
+                const enabled = row.values[planIndex];
+
+                return (
+                  <div class="flex items-center justify-between gap-4">
+
+                    <span class="text-zinc-400 text-sm">
+                      {t(`comparison.rows.${row.key}`)}
+                    </span>
+
+                    {enabled ? (
+                      <Check className="w-5 h-5 text-violet-400 shrink-0" />
+                    ) : (
+                      <Minus className="w-5 h-5 text-zinc-600 shrink-0" />
+                    )}
+
+                  </div>
+                );
+              })}
+
+            </div>
+
+          </div>
+        );
+      })}
+
+    </div>
+
+  </div>
+</section>

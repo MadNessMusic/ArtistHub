@@ -1,1 +1,11 @@
-<h1>Madness Pro Landing</h1>
+---
+import LandingLayout from "../layouts/LandingLayout.astro";
+import HomePage from "../components/HomePage.astro";
+import { useTranslations } from "../i18n";
+
+const t = useTranslations("es");
+---
+
+<LandingLayout lang="es" t={t}>
+  <HomePage lang="es" t={t} />
+</LandingLayout>
